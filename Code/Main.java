@@ -1,14 +1,15 @@
-import Algorithm.GeneticAlgorithm;
-import Model.Individual;
-import Utils.FileLoader;
-import Utils.ResultWriter;
-
+package Code;
 import java.util.List;
+
+import Code.Algorithm.GeneticAlgorithm;
+import Code.Model.Individual;
+import Code.Utils.FileLoader;
+import Code.Utils.ResultWriter;
 
 public class Main {
     public static void main(String[] args) {
         try {
-            List<Model.Item> items = FileLoader.loadItems("Data/data.txt");
+            List<Code.Model.Item> items = FileLoader.loadItems("Data/data.txt");
 
             int shelfWidth = 30;
             int shelfDepth = 20;
@@ -25,7 +26,7 @@ public class Main {
             Individual best = ga.run(items);
 
             System.out.println("\nBest Solution:");
-            for (Model.Rectangle r : best.container.getRectangles()) {
+            for (Code.Model.Rectangle r : best.container.getRectangles()) {
                 System.out.printf("Item %d: %d facings at (%d, %d)\n", r.item.id, r.facingCount, r.x, r.y);
             }
             System.out.println("Total Profit: $" + best.getFitness(items));
