@@ -1,0 +1,24 @@
+=== 2DSCASP Genetic Algorithm Result ===
+Date: 2025-07-09 07:46:18
+
+== Parameters ==
+Shelf Size: 30 x 20
+Population Size: 50
+Mutation Rate: 0.10
+Generations: 100
+Use ASS Initialization: true
+
+== Shelf Arrangement ==
+Item 1: 10 facings at (0, 0), Width=30, Depth=2
+Item 2: 15 facings at (0, 2), Width=30, Depth=2
+Item 3: 1 facings at (0, 4), Width=4, Depth=1
+Item 4: 1 facings at (4, 4), Width=13, Depth=7
+
+== Profit Details ==
+Item 1: Space Elastic Demand=2.00, OOA=0.00, OOS=3.00, Contribution=749.29
+Item 2: Space Elastic Demand=2.95, OOA=0.00, OOS=26.00, Contribution=6949.00
+Item 3: Space Elastic Demand=2.00, OOA=0.00, OOS=1.00, Contribution=40.50
+Item 4: Space Elastic Demand=2.00, OOA=0.00, OOS=0.05, Contribution=6.15
+
+== Summary ==
+Total Profit: $7744.94
