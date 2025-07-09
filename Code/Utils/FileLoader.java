@@ -1,9 +1,9 @@
-package Utils;
-
-import Model.Item;
+package Code.Utils;
 
 import java.io.*;
 import java.util.*;
+
+import Code.Model.Item;
 
 public class FileLoader {
     public static List<Item> loadItems(String filePath) throws IOException {

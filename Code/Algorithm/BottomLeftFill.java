@@ -1,9 +1,9 @@
-package Algorithm;
-
-import Model.Container;
-import Model.Rectangle;
+package Code.Algorithm;
 
 import java.util.List;
+
+import Code.Model.Container;
+import Code.Model.Rectangle;
 
 public class BottomLeftFill {
 

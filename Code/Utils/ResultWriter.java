@@ -1,14 +1,13 @@
-package Utils;
-
-//import Model.Container;
-import Model.Individual;
-import Model.Item;
+package Code.Utils;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import Code.Model.Individual;
+import Code.Model.Item;
 
 public class ResultWriter {
 
@@ -29,13 +28,13 @@ public class ResultWriter {
         writer.write("\n");
 
         writer.write("== Shelf Arrangement ==\n");
-        for (Model.Rectangle r : best.rectangles) {
+        for (Code.Model.Rectangle r : best.rectangles) {
             writer.write(String.format("Item %d: %d facings at (%d, %d), Width=%d, Depth=%d\n",
                     r.item.id, r.facingCount, r.x, r.y, r.getWidth(), r.getHeight()));
         }
 
         writer.write("\n== Profit Details ==\n");
-        for (Model.Rectangle r : best.rectangles) {
+        for (Code.Model.Rectangle r : best.rectangles) {
             Item item = r.item;
             double spaceElasticDemand = item.minDemand * Math.pow(r.facingCount, item.spaceElasticity);
             double ooaDemand = calculateOOADemand(item, best.container.getRectangles());
@@ -53,9 +52,9 @@ public class ResultWriter {
         System.out.println("✅ Results written to " + filePath);
     }
 
-    private static double calculateOOADemand(Item item, List<Model.Rectangle> allRects) {
+    private static double calculateOOADemand(Item item, List<Code.Model.Rectangle> allRects) {
         double ooaDemand = 0.0;
-        for (Model.Rectangle otherRect : allRects) {
+        for (Code.Model.Rectangle otherRect : allRects) {
             Item other = otherRect.item;
             if (other.id != item.id && !other.isSelected()) {
                 double rate = other.substitutionRatesOOA.getOrDefault(item.id, 0.0);
@@ -65,9 +64,9 @@ public class ResultWriter {
         return ooaDemand;
     }
 
-    private static double calculateOOSDemand(Item item, List<Model.Rectangle> allRects) {
+    private static double calculateOOSDemand(Item item, List<Code.Model.Rectangle> allRects) {
         double oosDemand = 0.0;
-        for (Model.Rectangle otherRect : allRects) {
+        for (Code.Model.Rectangle otherRect : allRects) {
             Item other = otherRect.item;
             if (other.id == item.id || !other.isSelected()) continue;
             double rate = other.substitutionRatesOOS.getOrDefault(item.id, 0.0);

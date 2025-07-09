@@ -1,11 +1,11 @@
-package Algorithm;
-
-import Model.Container;
-import Model.Individual;
-import Model.Item;
-import Model.Rectangle;
+package Code.Algorithm;
 
 import java.util.*;
+
+import Code.Model.Container;
+import Code.Model.Individual;
+import Code.Model.Item;
+import Code.Model.Rectangle;
 
 public class GeneticAlgorithm {
     private final List<Item> items;
